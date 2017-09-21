@@ -1,0 +1,25 @@
+{
+  "name": "datasources-seeder",
+  "version": "0.0.1",
+  "description": "NodeJS abstract seeder",
+  "main": "index.js",
+  "bin": {
+    "datasources-seeder": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HungryUp/datasources-seeder.git"
+  },
+  "keywords": [
+    "seeds"
+  ],
+  "author": "HungryUp",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/HungryUp/datasources-seeder/issues"
+  },
+  "homepage": "https://github.com/HungryUp/datasources-seeder#readme",
+  "dependencies": {
+    "commander": "^2.11.0"
+  }
+}
