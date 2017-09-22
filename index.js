@@ -4,10 +4,11 @@ const { promisify } = require('util');
 const fs = require('fs');
 const { join } = require('path');
 const packageConfig = require('./package.json');
+
 const readdir = promisify(fs.readdir);
 
 function loadConfig(location) {
-  if (process && typeof location !== "object") {
+  if (process && typeof location !== 'object') {
     return require(join(process.cwd(), location));
   }
   return location;
@@ -17,7 +18,7 @@ program
   .version(packageConfig.version)
   .option('-c, --config <config>', 'Configuration file, default ./seeds.json', loadConfig, null)
   .arguments('[datasoures...]')
-  .parse(process.argv)
+  .parse(process.argv);
 
 if (!program.config) {
   program.config = require(join(process.cwd(), 'seeds.json'));
@@ -46,6 +47,6 @@ for (const sourceName of sourceNames) {
 
 Promise
   .all(seeding)
-  .then(r => process.exit(0))
-  .catch(error => { throw error });
+  .then(() => process.exit(0))
+  .catch((error) => { throw error; });
 
